@@ -1,54 +1,111 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>EVA观后感 | Hannah Qin</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EVA观后感 | Hannah Qin</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: "Times New Roman", "Songti SC", "SimSun", serif;
-  background: #f6f2eb;
-  color: #1d1b19;
-  line-height: 1.95;
-}
-.wrap { max-width: 760px; margin: 0 auto; padding: 40px 20px; }
-.article { background: rgba(255,255,255,0.8); padding: 36px; border-radius: 24px; }
-h1 { margin: 0; font-size: 2.6rem; }
-.lead { margin-top: 14px; color: #666; }
-.divider { height:1px;background:#ddd;margin:24px 0;}
-p { text-indent: 2em; margin-bottom: 1.4em; }
-</style>
+  <style>
+    :root {
+      --paper: rgba(255,255,255,0.82);
+      --text: #1d1b19;
+      --muted: #6a635c;
+      --line: rgba(29,27,25,0.12);
+      --shadow: 0 20px 60px rgba(29, 27, 25, 0.08);
+      --max: 760px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Times New Roman", "Songti SC", "SimSun", serif;
+      background: #f6f2eb;
+      color: var(--text);
+      line-height: 1.95;
+    }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      background: rgba(247, 244, 238, 0.8);
+      border-bottom: 1px solid #eee;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .nav a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    .article-shell {
+      padding: 60px 0;
+    }
+
+    .article-card {
+      background: var(--paper);
+      border-radius: 26px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.6rem;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 24px 0;
+    }
+
+    article p {
+      text-indent: 2em;
+      margin-bottom: 1.4em;
+    }
+  </style>
 </head>
 
 <body>
-<div class="wrap">
-<div class="article">
 
-<h1>EVA观后感</h1>
-<p class="lead">当影评逐渐变成自我分析。</p>
-<div class="divider"></div>
+<header class="topbar">
+  <div class="wrap nav">
+    <strong>Hannah Qin</strong>
+    <a href="../index.html">首页</a>
+  </div>
+</header>
 
-<p>最初看《EVA》时，我以为自己在看一部关于战斗与拯救的作品。但随着剧情推进，我逐渐意识到，这更像是一种心理剖析。</p>
+<main class="article-shell">
+  <div class="wrap">
+    <section class="article-card">
 
-<p>角色之间的关系并不稳定，甚至可以说是不断崩塌的。人与人之间的连接始终处在一种随时断裂的状态。</p>
+      <h1>EVA观后感</h1>
 
-<p>这种不稳定让我产生了一种熟悉感。并不是剧情本身，而是那种无法建立稳定关系的感觉。</p>
+      <div class="divider"></div>
 
-<p>角色们在不断尝试接近彼此，同时又在关键时刻后退。这种反复，让关系变成一种消耗。</p>
+      <article>
+        <p>最初看《EVA》时，我以为自己在看一部关于战斗与拯救的作品。</p>
+        <p>但随着剧情推进，我逐渐意识到，这更像是一种心理剖析。</p>
+        <p>角色之间的关系并不稳定，甚至可以说是不断崩塌的。</p>
+        <p>人与人之间的连接始终处在一种随时断裂的状态。</p>
+        <p>这种不稳定让我产生了一种熟悉感。</p>
+        <p>我逐渐发现，我对这部作品的理解开始偏离剧情分析，而转向自我观察。</p>
+        <p>它像一面镜子。</p>
+        <p>不是解释，而是映照。</p>
+      </article>
 
-<p>我逐渐发现，我对这部作品的理解开始偏离“剧情分析”，而转向对自身状态的观察。</p>
+    </section>
+  </div>
+</main>
 
-<p>某种程度上，这部作品像一面镜子。它并不直接解释什么，而是让观众在其中看到自己的结构。</p>
-
-<p>这种观看体验并不轻松。它甚至有些令人疲惫。但正因为如此，它才显得真实。</p>
-
-<p>当我试图总结它时，反而发现无法给出一个清晰的结论。</p>
-
-<p>或许这正是它的意义所在：它并不试图被总结。</p>
-
-</div>
-</div>
 </body>
 </html>
