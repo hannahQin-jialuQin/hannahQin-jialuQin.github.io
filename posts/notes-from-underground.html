@@ -4,174 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>《地下室手记》读后感 | Hannah Qin</title>
-
   <style>
-    :root {
-      --bg: #f7f4ee;
-      --paper: rgba(255,255,255,0.82);
-      --text: #1d1b19;
-      --muted: #6a635c;
-      --line: rgba(29,27,25,0.12);
-      --shadow: 0 20px 60px rgba(29, 27, 25, 0.08);
-      --max: 760px;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.95), transparent 34%),
-        linear-gradient(180deg, #f9f6f1 0%, #f3efe8 100%);
-      font-family: "Times New Roman", "Songti SC", "SimSun", serif;
-      line-height: 1.95;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .wrap {
-      width: min(calc(100% - 32px), var(--max));
-      margin: 0 auto;
-    }
-
-    /* 顶部导航 */
-    .topbar {
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(12px);
-      background: rgba(247, 244, 238, 0.8);
-      border-bottom: 1px solid rgba(29,27,25,0.08);
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 16px 0;
-    }
-
-    .brand strong {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .nav a {
-      margin-left: 16px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    /* 页面结构 */
-    .article-shell {
-      padding: 60px 0 80px;
-    }
-
-    .article-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      padding: 36px 30px;
-      box-shadow: var(--shadow);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2.6rem;
-      line-height: 1.2;
-      font-weight: 600;
-    }
-
-    .lead {
-      margin-top: 14px;
-      color: var(--muted);
-    }
-
-    .divider {
-      height: 1px;
-      background: var(--line);
-      margin: 24px 0;
-    }
-
-    article p {
-      margin: 0 0 1.4em;
-      font-size: 1.05rem;
-      text-indent: 2em;
-    }
-
-    .backline {
-      margin-top: 30px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .backline a {
-      font-weight: 600;
-      color: var(--text);
-    }
-  </style>
+:root {
+  --bg: #f7f4ee;
+  --paper: rgba(255,255,255,0.82);
+  --text: #1d1b19;
+  --muted: #6a635c;
+  --line: rgba(29,27,25,0.12);
+  --shadow: 0 20px 60px rgba(29, 27, 25, 0.08);
+  --max: 760px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.95), transparent 34%),
+    linear-gradient(180deg, #f9f6f1 0%, #f3efe8 100%);
+  font-family: "Times New Roman", "Songti SC", "SimSun", serif;
+  line-height: 1.95;
+}
+a { color: inherit; text-decoration: none; }
+.wrap { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+.topbar {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(247, 244, 238, 0.8);
+  border-bottom: 1px solid rgba(29,27,25,0.08);
+}
+.nav { display: flex; justify-content: space-between; padding: 16px 0; }
+.brand strong { font-size: 1rem; font-weight: 600; }
+.nav a { margin-left: 16px; color: var(--muted); font-size: 0.9rem; }
+.article-shell { padding: 60px 0 80px; }
+.article-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 36px 30px;
+  box-shadow: var(--shadow);
+}
+h1 { margin: 0; font-size: 2.6rem; line-height: 1.2; font-weight: 600; }
+.lead { margin-top: 14px; color: var(--muted); }
+.divider { height: 1px; background: var(--line); margin: 24px 0; }
+article p { margin: 0 0 1.4em; font-size: 1.05rem; text-indent: 2em; }
+article .no-indent { text-indent: 0; }
+article ol { margin: 0 0 1.4em 2.2em; }
+article li { margin-bottom: 0.6em; }
+.backline {
+  margin-top: 30px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.backline a { font-weight: 600; color: var(--text); }
+</style>
 </head>
-
 <body>
-
-  <!-- 顶部导航 -->
   <header class="topbar">
     <div class="wrap nav">
-      <div class="brand">
-        <strong>Hannah Qin</strong>
-      </div>
-      <div>
-        <a href="../index.html">首页</a>
-      </div>
+      <div class="brand"><strong>Hannah Qin</strong></div>
+      <div><a href="../index.html">首页</a></div>
     </div>
   </header>
-
-  <!-- 正文 -->
   <main class="article-shell">
     <div class="wrap">
       <section class="article-card">
-
         <h1>《地下室手记》读后感</h1>
-        <p class="lead">关于理性、反叛与自我毁灭倾向的思考。</p>
-
+        <p class="lead">原文全文。</p>
         <div class="divider"></div>
-
         <article>
-
-          <p>《地下室手记》给我的第一感觉并不是“难读”，而是令人不适。那种不适感来自于作者刻意放大的矛盾与自我否定。</p>
-
-          <p>地下室人几乎在每一句话里都在推翻自己。他先建立一个立场，再迅速摧毁它。这种不断自我拆解的表达方式，让人很难抓住一个稳定的“他”。</p>
-
-          <p>但正是这种不稳定，使他显得异常真实。理性在他那里并不是解放，而是一种束缚。他看得太清楚，以至于无法行动。</p>
-
-          <p>我开始意识到，他所反对的并不是“理性本身”，而是那种把人简化为公式、把人生归纳为可预测系统的理性。</p>
-
-          <p>他拒绝成为一个可以被计算的人。哪怕这种拒绝的方式是自我毁灭。</p>
-
-          <p>这让我想到，人是否真的希望被“解释”？如果一切都可以被推导，那么人的自由意志是否仍然存在？</p>
-
-          <p>地下室人的回答显然是否定的。他宁愿选择痛苦，也要证明自己并非一个完全理性的存在。</p>
-
-          <p>这种姿态带有某种极端性，但也正因为极端，才让问题变得更加清晰。</p>
-
-          <p>读完之后，我并没有得到答案，只是更明确地意识到：理性并不是终点，它只是众多解释方式中的一种。</p>
+          
+<p>用各种在飞机上的时间终于读完了这本书。篇幅不长，却有着惊人的心理描写，我的挣扎被陀翁借主人公的心理描写剖开：假想敌的设计、前后句的矛盾、对自己的否定肯定又升华，种种常出现在我身上的情绪被精准地呈现出来。</p>
+<p>读之前，我并不知道“究竟哪一个更好些——是廉价的幸福（дешёвое счастье），还是崇高的苦难（высокое страдание）？”原来出自这本书。主人公在羞辱丽萨后，追悔莫及地在雪夜中追出几百米后，忽然提出了这个问题。我看完后的第一反应是：这个“无聊的问题”在我看来和前后文并不十足的连贯。幸福未必廉价，苦难也未必崇高。和丽萨在一起的“活生生的生活”就是廉价的吗？孤独又是否算得上崇高？抑或，它甚至不配称为苦难。这个问题只不过又把他牵回了胡思乱想的心灵“地下室”舒适圈。</p>
+<p>那么，在陀翁的笔下，什么是廉价的幸福？什么是崇高的苦难？廉价的幸福是指像那位军官和那位阔少一样走上社会认可度高的路，晋升、成家、寻欢作乐吗？崇高的苦难是指主人公一样孑然一身，充满矛盾、痛苦与挣扎？在我看来，幸福不可能廉价。亲密关系需要顿悟与学习；社会化过程也需要做许多取舍与牺牲。苦难也不一定崇高。作为下水道鼠鼠的我和主人公竟有如此多的共鸣。我们的内心一样敏感，一样高自尊又虚荣，自视为聪明人，又为自己的不作为找借口：我“整个一生开始不了任何事情，也完成不了任何事情”。主人公的苦难也未必崇高。不过他当然也可以自认其为有意义的。</p>
+<p>我也很好奇这一连串的故事是怎么和开篇主人公洋洋洒洒批判的“2+2=4”的理性社会相连的。是指主人公明白理性社会所认可的人生，却偏偏不走吗？放在金融系学生的语境下，这意味着什么事都要权衡利弊，选择预期收益最高，风险尽可能低的选项。且这个expected return往往不是我expect的，而是peers同侪群体expect的。或许这就是为什么我读时第一时间没联想到反乌托邦主题。因为我真的身处这种理性社会中，反而没察觉其中的荒谬。</p>
+<p>先破后立，作者在批判后，随即为非理性的正名。“须知我在这里并非崇尚苦难，也并非崇尚幸福。我主张......捍卫自己的任性，并且捍卫那在我需要时能为我的任性提供的保障。“主人公为了自尊，强行要参加同学的欢送宴，并在宴会上大闹一场——读来让我脚趾抠地。但也许这就是主人公的人生美学吧。我也想有我自己的人生美学。为了自己的什么执着努力，然后收获极大的喜悦或者极大的悲伤。就这样活一场。主人公的执着就是他的任性。我的执着是什么？我不知道。但“色即是空，空即是色，受想行识，亦复如是”，我们又能真正抓住或者留住什么吗？我不知道。</p>
 
         </article>
-
         <div class="backline">
           <span>Reading</span>
           <a href="../index.html">返回首页</a>
         </div>
-
       </section>
     </div>
   </main>
-
 </body>
 </html>
