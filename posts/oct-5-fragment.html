@@ -1,54 +1,125 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>10月5号随笔 | Hannah Qin</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10月5号随笔 | Hannah Qin</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: "Times New Roman", "Songti SC", "SimSun", serif;
-  background: #f6f2eb;
-  color: #1d1b19;
-  line-height: 1.95;
-}
-.wrap { max-width: 760px; margin: 0 auto; padding: 40px 20px; }
-.article { background: rgba(255,255,255,0.8); padding: 36px; border-radius: 24px; }
-h1 { margin: 0; font-size: 2.6rem; }
-.lead { margin-top: 14px; color: #666; }
-.divider { height:1px;background:#ddd;margin:24px 0;}
-p { text-indent: 2em; margin-bottom: 1.4em; }
-</style>
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --paper: rgba(255,255,255,0.82);
+      --text: #1d1b19;
+      --muted: #6a635c;
+      --line: rgba(29,27,25,0.12);
+      --shadow: 0 20px 60px rgba(29, 27, 25, 0.08);
+      --max: 760px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.95), transparent 34%),
+        linear-gradient(180deg, #f9f6f1 0%, #f3efe8 100%);
+      font-family: "Times New Roman", "Songti SC", "SimSun", serif;
+      line-height: 1.95;
+    }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      background: rgba(247, 244, 238, 0.8);
+      border-bottom: 1px solid rgba(29,27,25,0.08);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .nav a {
+      color: #6a635c;
+      text-decoration: none;
+      margin-left: 16px;
+    }
+
+    .article-shell {
+      padding: 60px 0 80px;
+    }
+
+    .article-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 36px 30px;
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.6rem;
+    }
+
+    .lead {
+      margin-top: 14px;
+      color: var(--muted);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 24px 0;
+    }
+
+    article p {
+      margin: 0 0 1.4em;
+      text-indent: 2em;
+    }
+  </style>
 </head>
 
 <body>
-<div class="wrap">
-<div class="article">
 
-<h1>10月5号随笔</h1>
-<p class="lead">一些在深夜反复出现的问题。</p>
-<div class="divider"></div>
+<header class="topbar">
+  <div class="wrap nav">
+    <strong>Hannah Qin</strong>
+    <a href="../index.html">首页</a>
+  </div>
+</header>
 
-<p>有时候我会怀疑，所谓“成长”是否只是不断修正自我期待的过程。</p>
+<main class="article-shell">
+  <div class="wrap">
+    <section class="article-card">
 
-<p>我们在不同阶段都会设定一个理想状态，但大多数时候，这些状态都无法真正实现。</p>
+      <h1>10月5号随笔</h1>
+      <p class="lead">一些在深夜反复出现的问题。</p>
 
-<p>于是人开始调整：降低预期，或者重新定义目标。</p>
+      <div class="divider"></div>
 
-<p>这种调整本身并不一定是坏事。但当它变成一种习惯时，就会逐渐侵蚀原本的判断。</p>
+      <article>
+        <p>有时候我会怀疑，所谓“成长”是否只是不断修正自我期待的过程。</p>
+        <p>我们在不同阶段都会设定一个理想状态，但大多数时候，这些状态都无法真正实现。</p>
+        <p>于是人开始调整：降低预期，或者重新定义目标。</p>
+        <p>这种调整本身并不一定是坏事。但当它变成一种习惯时，就会逐渐侵蚀原本的判断。</p>
+        <p>我开始不确定，哪些想法是“真实的”，哪些只是被环境塑造的。</p>
+        <p>情绪在这种状态下变得不稳定。它既无法完全表达，也无法被彻底压制。</p>
+        <p>于是只剩下一种模糊的存在感。</p>
+        <p>写下来或许并不能解决问题，但至少能让这些想法暂时被固定。</p>
+      </article>
 
-<p>我开始不确定，哪些想法是“真实的”，哪些只是被环境塑造的。</p>
+    </section>
+  </div>
+</main>
 
-<p>情绪在这种状态下变得不稳定。它既无法完全表达，也无法被彻底压制。</p>
-
-<p>于是只剩下一种模糊的存在感。</p>
-
-<p>写下来或许并不能解决问题，但至少能让这些想法暂时被固定。</p>
-
-<p>哪怕只是短暂的。</p>
-
-</div>
-</div>
 </body>
 </html>
