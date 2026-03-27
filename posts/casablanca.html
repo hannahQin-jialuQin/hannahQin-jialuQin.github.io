@@ -1,174 +1,96 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Casablanca观后感 | Hannah Qin</title>
-
+  <title>《Casablanca》观后感 | Hannah Qin</title>
   <style>
-    :root {
-      --bg: #f7f4ee;
-      --paper: rgba(255,255,255,0.82);
-      --text: #1d1b19;
-      --muted: #6a635c;
-      --line: rgba(29,27,25,0.12);
-      --shadow: 0 20px 60px rgba(29, 27, 25, 0.08);
-      --max: 760px;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.95), transparent 34%),
-        linear-gradient(180deg, #f9f6f1 0%, #f3efe8 100%);
-      font-family: "Times New Roman", "Songti SC", "SimSun", serif;
-      line-height: 1.95;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .wrap {
-      width: min(calc(100% - 32px), var(--max));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(12px);
-      background: rgba(247, 244, 238, 0.8);
-      border-bottom: 1px solid rgba(29,27,25,0.08);
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 16px 0;
-    }
-
-    .brand strong {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .nav a {
-      margin-left: 16px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .article-shell {
-      padding: 60px 0 80px;
-    }
-
-    .article-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      padding: 36px 30px;
-      box-shadow: var(--shadow);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2.6rem;
-      line-height: 1.2;
-      font-weight: 600;
-    }
-
-    .lead {
-      margin-top: 14px;
-      color: var(--muted);
-    }
-
-    .divider {
-      height: 1px;
-      background: var(--line);
-      margin: 24px 0;
-    }
-
-    article p {
-      margin: 0 0 1.4em;
-      font-size: 1.05rem;
-      text-indent: 2em;
-    }
-
-    .backline {
-      margin-top: 30px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .backline a {
-      font-weight: 600;
-      color: var(--text);
-    }
-  </style>
+:root {
+  --bg: #f7f4ee;
+  --paper: rgba(255,255,255,0.82);
+  --text: #1d1b19;
+  --muted: #6a635c;
+  --line: rgba(29,27,25,0.12);
+  --shadow: 0 20px 60px rgba(29, 27, 25, 0.08);
+  --max: 760px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.95), transparent 34%),
+    linear-gradient(180deg, #f9f6f1 0%, #f3efe8 100%);
+  font-family: "Times New Roman", "Songti SC", "SimSun", serif;
+  line-height: 1.95;
+}
+a { color: inherit; text-decoration: none; }
+.wrap { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+.topbar {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(247, 244, 238, 0.8);
+  border-bottom: 1px solid rgba(29,27,25,0.08);
+}
+.nav { display: flex; justify-content: space-between; padding: 16px 0; }
+.brand strong { font-size: 1rem; font-weight: 600; }
+.nav a { margin-left: 16px; color: var(--muted); font-size: 0.9rem; }
+.article-shell { padding: 60px 0 80px; }
+.article-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 36px 30px;
+  box-shadow: var(--shadow);
+}
+h1 { margin: 0; font-size: 2.6rem; line-height: 1.2; font-weight: 600; }
+.lead { margin-top: 14px; color: var(--muted); }
+.divider { height: 1px; background: var(--line); margin: 24px 0; }
+article p { margin: 0 0 1.4em; font-size: 1.05rem; text-indent: 2em; }
+article .no-indent { text-indent: 0; }
+article ol { margin: 0 0 1.4em 2.2em; }
+article li { margin-bottom: 0.6em; }
+.backline {
+  margin-top: 30px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.backline a { font-weight: 600; color: var(--text); }
+</style>
 </head>
-
 <body>
-
   <header class="topbar">
     <div class="wrap nav">
-      <div class="brand">
-        <strong>Hannah Qin</strong>
-      </div>
-      <div>
-        <a href="../index.html">首页</a>
-      </div>
+      <div class="brand"><strong>Hannah Qin</strong></div>
+      <div><a href="../index.html">首页</a></div>
     </div>
   </header>
-
   <main class="article-shell">
     <div class="wrap">
       <section class="article-card">
-
-        <h1>Casablanca观后感</h1>
-        <p class="lead">关于爱情、选择与时代背景下个体命运的经典叙事。</p>
-
+        <h1>《Casablanca》观后感</h1>
+        <p class="lead">原文全文。</p>
         <div class="divider"></div>
-
         <article>
-
-          <p>第一次看《Casablanca》时，我并没有立刻被打动。黑白画面、略显缓慢的节奏，以及带有明显时代痕迹的表演方式，都让我一开始有些疏离。</p>
-
-          <p>但随着故事推进，我逐渐意识到这部电影真正的力量并不在情节本身，而在它所构建的一种情境：一个夹在战争与流亡之间的中转站，一个人人都在等待离开的城市。</p>
-
-          <p>Rick的酒吧像一个临时避难所。人们在这里交换信息、交易签证、试图逃离，也在这里短暂地生活。所有人都带着目的而来，但没有人真正属于这里。</p>
-
-          <p>Rick这个角色本身就是矛盾的。他表面上冷漠、拒绝卷入政治与情感，但这种“置身事外”其实是一种主动选择后的防御。他并不是真的无情，而是不愿再承担代价。</p>
-
-          <p>Ilsa的出现打破了这种平衡。她不仅带来了过去，也迫使Rick重新面对自己的情感与价值判断。爱情在这里不再只是私人经验，而是被放置在更大的历史背景之中。</p>
-
-          <p>我逐渐意识到，这部电影真正讲述的并不是爱情是否能实现，而是人在无法掌控的时代中如何做出选择。Rick最终的决定并不是浪漫意义上的“牺牲”，而更像是一种清醒之后的取舍。</p>
-
-          <p>这种选择带有一种冷静的残酷。它不是情绪爆发的结果，而是在权衡之后仍然无法逃避的决定。也正因如此，它显得格外真实。</p>
-
-          <p>相比之下，我反而更在意那种“没有发生的生活”。如果没有战争，如果没有离散，他们的关系是否会走向完全不同的结局？这种假设并没有答案，但正是这种不可实现性，让整部电影有了某种持续的张力。</p>
-
-          <p>也许正是这种张力，让《Casablanca》成为经典。它没有试图给出一个令人满足的答案，而是停在一个刚好足够清晰、又足够模糊的位置。</p>
+          
+<p>先听了Casablanca这首歌，再去慕名看了Casablanca这部电影。先写点和爱情无关的。一个异乡人真的能够在爱上另一个国家吗？当我把爱国两个字拆开之后，我发现我不知道什么是爱。我不知道爱一个人是什么样的，更不知道如何去爱一个国家。仅从我自己在法国的亲身经历，我不太能想象一个人能完全融入异国他乡。这部电影不仅讲了男女主的爱情，也讲了男主从一开始的从左派有志青年，到圆滑得在法德两方端水的Casablanca咖啡店老板，最后一枪射死来到unoccupied France的德军少将。能说这是男主革命精神的觉醒吗？也并不是。他在咖啡店里也尽可能的对地下运动者给予庇护，允许乐队奏响马赛曲，花大笔钱让小夫妻逃往Lisbon。男主最后明晃晃的一枪，反而是他对Ilsa大声的爱吧。</p>
+<p>好美的爱情呀。就像我和宋的一样。We’ll always have 9th, June. We’ll always have Vienna.最后那一幕的男主，和Laszlo说着昨晚Ilsa来我房里，骗自己还爱我来为你求到通行证。我知道Ilsa在说谎在演戏，但我陪着她演下去了。男主需要多大的勇气说出这番话啊。这背后有多少冷静的思索，有多少不舍得，有多少不甘心。失而复得的佳人却要再放手。这怎么能松手呢？</p>
+<p>虽然警长一直说Rick是个sentimentalist。但sentimentalist真的能做到吗？放手，看着她和她所爱远走高飞。哪怕知道她不爱自己就算了，但相爱的两个人真的能做到把一方拱手相让吗？这也许是我还无法企及的爱情高度。只能隔着银幕赞叹其美，默默的抹去自己眼角的泪。</p>
+<p>那句话说的实在不错。爱人是为了爱情。不是为了别的什么。是为了和他的那一瞬激情。是和他在一起，全世界仿佛只剩我们两人的那种陶醉。是脑袋里感情像毛线球一样打结什么也理不清，但在双唇相吻时思绪“嗡”的一下的清澈。是无数的借口，无数次holdback，但你did it anyway。</p>
+<p>虽然说passion的词根本就有受难的意思在。但我想，如果爱人只是为了爱情，想要的不要那么多的话。爱情一定是个很美好很值得追求的东西吧。</p>
 
         </article>
-
         <div class="backline">
           <span>Film</span>
           <a href="../index.html">返回首页</a>
         </div>
-
       </section>
     </div>
   </main>
-
 </body>
 </html>
