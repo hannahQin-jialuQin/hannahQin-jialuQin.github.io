@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>《金钱博弈》读后感 | Hannah Qin</title>
-  <meta name="description" content="关于《金钱博弈》的读后感：一级市场、交易谈判、工作与生活的拉扯。" />
+
   <style>
     :root {
       --bg: #f7f4ee;
@@ -13,7 +12,6 @@
       --text: #1d1b19;
       --muted: #6a635c;
       --line: rgba(29,27,25,0.12);
-      --strong-line: rgba(29,27,25,0.22);
       --shadow: 0 20px 60px rgba(29, 27, 25, 0.08);
       --max: 760px;
     }
@@ -26,9 +24,8 @@
       background:
         radial-gradient(circle at top left, rgba(255,255,255,0.95), transparent 34%),
         linear-gradient(180deg, #f9f6f1 0%, #f3efe8 100%);
-      font-family: "Iowan Old Style", "Palatino Linotype", "Noto Serif SC", "Songti SC", serif;
+      font-family: "Times New Roman", "Songti SC", "SimSun", serif;
       line-height: 1.95;
-      letter-spacing: 0.01em;
     }
 
     a {
@@ -44,176 +41,97 @@
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 20;
-      backdrop-filter: blur(16px);
-      background: rgba(247, 244, 238, 0.76);
-      border-bottom: 1px solid rgba(29,27,25,0.07);
+      backdrop-filter: blur(12px);
+      background: rgba(247, 244, 238, 0.8);
+      border-bottom: 1px solid rgba(29,27,25,0.08);
     }
 
     .nav {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 16px;
       padding: 16px 0;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
     }
 
     .brand strong {
       font-size: 1rem;
       font-weight: 600;
-      letter-spacing: 0.02em;
     }
 
-    .brand span {
-      font-size: 0.8rem;
+    .nav a {
+      margin-left: 16px;
       color: var(--muted);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      align-items: center;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
+      font-size: 0.9rem;
     }
 
     .article-shell {
-      padding: 56px 0 80px;
+      padding: 60px 0 80px;
     }
 
     .article-card {
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 40px 34px 34px;
+      border-radius: 26px;
+      padding: 36px 30px;
       box-shadow: var(--shadow);
-    }
-
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .meta span {
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-      padding: 0 12px;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      color: var(--muted);
-      background: rgba(255,255,255,0.72);
-      border: 1px solid var(--line);
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 5.8vw, 3.5rem);
-      line-height: 1.08;
+      font-size: 2.6rem;
+      line-height: 1.2;
       font-weight: 600;
-      letter-spacing: -0.03em;
     }
 
     .lead {
-      margin-top: 18px;
+      margin-top: 14px;
       color: var(--muted);
-      font-size: 1.04rem;
     }
 
     .divider {
       height: 1px;
       background: var(--line);
-      margin: 28px 0 22px;
+      margin: 24px 0;
     }
 
     article p {
-      margin: 0 0 1.25em;
-      font-size: 1.06rem;
-    }
-
-    article p:first-of-type::first-letter {
-      float: left;
-      font-size: 3.3em;
-      line-height: 0.92;
-      padding-right: 8px;
-      padding-top: 6px;
-      font-weight: 600;
+      margin: 0 0 1.4em;
+      font-size: 1.05rem;
+      text-indent: 2em;
     }
 
     .backline {
-      margin-top: 28px;
+      margin-top: 30px;
       padding-top: 18px;
       border-top: 1px solid var(--line);
       display: flex;
       justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
     }
 
     .backline a {
-      color: var(--text);
       font-weight: 600;
-    }
-
-    @media (max-width: 640px) {
-      .nav {
-        flex-direction: column;
-        align-items: start;
-      }
-
-      .article-shell {
-        padding-top: 28px;
-      }
-
-      .article-card {
-        padding: 28px 20px 24px;
-        border-radius: 22px;
-      }
-
-      article p {
-        font-size: 1rem;
-      }
+      color: var(--text);
     }
   </style>
 </head>
+
 <body>
+
   <header class="topbar">
     <div class="wrap nav">
-      <a class="brand" href="../index.html">
+      <div class="brand">
         <strong>Hannah Qin</strong>
-        <span>阅读 · 随笔 · 生活片段</span>
-      </a>
-      <nav class="nav-links">
+      </div>
+      <div>
         <a href="../index.html">首页</a>
-        <a href="../index.html#essays">文章</a>
-        <a href="../index.html#about">关于</a>
-      </nav>
+      </div>
     </div>
   </header>
 
   <main class="article-shell">
     <div class="wrap">
       <section class="article-card">
-        <div class="meta">
-          <span>读书</span>
-          <span>金融叙事</span>
-          <span>一级市场</span>
-        </div>
 
         <h1>《金钱博弈》读后感</h1>
         <p class="lead">建模、谈判、交易、生活欲望，以及一个本科生在职业想象与私人生活之间的拉扯。</p>
@@ -221,6 +139,7 @@
         <div class="divider"></div>
 
         <article>
+
           <p>每当我新建空白文档准备写点什么时，总会觉得脑袋里原先无数的想法像是被清空了一样：不知从何说起，又觉得自己浅薄的想法不值得被记录。</p>
 
           <p>《金钱博弈》是本很有意思的书，作者居然是对照着自己的英文原版又重写了一本中文版。主要讲述了新桥（现德太亚洲）在1999年亚洲金融危机时逆势收购韩国第一银行投、融、管、退的完整故事。</p>
@@ -238,14 +157,17 @@
           <p>这本书同时从侧面给了我很多机会了解投行、咨询公司和资本市场律师又是怎样在私市交易中起到作用的。投行会改无数版模型，咨询公司不仅做 due diligence，还可以早早研究被收购公司的裁员与改善策略，律师更是无处不在，没日没夜地改着合同条款。</p>
 
           <p>我想做的工作是什么样的？我不想工作，我喜欢生活。我希望能有一个宽敞明亮、厨具齐全的厨房，每天等着我来创造。我希望能养两条狗和三只猫，每天遛狗逗猫看书精进厨艺。活着真的好难，我必须要积累自己能这么做的资本金。</p>
+
         </article>
 
         <div class="backline">
-          <span>posted in Reading</span>
+          <span>Reading</span>
           <a href="../index.html">返回首页</a>
         </div>
+
       </section>
     </div>
   </main>
+
 </body>
 </html>
