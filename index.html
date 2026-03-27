@@ -4,124 +4,453 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hannah Qin</title>
-
+  <meta name="description" content="私人随笔、阅读笔记与投资思考。" />
   <style>
+    :root {
+      --bg: #f6f2eb;
+      --paper: rgba(255, 255, 255, 0.78);
+      --text: #171412;
+      --muted: #6b645d;
+      --line: rgba(23, 20, 18, 0.12);
+      --strong-line: rgba(23, 20, 18, 0.2);
+      --shadow: 0 20px 60px rgba(23, 20, 18, 0.06);
+      --max: 1220px;
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: "Songti SC", "Noto Serif SC", serif;
-      background: #f5f2ec;
-      color: #1a1a1a;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.94), transparent 34%),
+        linear-gradient(180deg, #f8f5ef 0%, #f3efe8 100%);
+      font-family: "Times New Roman", "Songti SC", "STSong", "SimSun", serif;
       line-height: 1.8;
+      letter-spacing: 0.01em;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 80px;
-    }
-
-    header a {
+    a {
+      color: inherit;
       text-decoration: none;
-      color: #666;
-      margin-left: 20px;
-      font-size: 14px;
+    }
+
+    .wrap {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(246, 242, 235, 0.76);
+      border-bottom: 1px solid rgba(23, 20, 18, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand strong {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .brand span {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 72px 0 34px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 0.9fr;
+      gap: 34px;
+      align-items: end;
     }
 
     h1 {
-      font-size: 64px;
-      line-height: 1.2;
-      font-weight: 600;
-      margin-bottom: 40px;
+      margin: 0;
+      font-size: clamp(3.4rem, 8vw, 6.4rem);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.035em;
     }
 
-    .intro {
-      color: #666;
-      margin-bottom: 60px;
+    .hero-desc {
+      margin-top: 24px;
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 1.18rem;
+      line-height: 1.9;
     }
 
-    .section-title {
-      margin-top: 60px;
-      margin-bottom: 20px;
-      font-size: 20px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 10px;
+    .hero-side {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 28px 24px;
+      box-shadow: var(--shadow);
     }
 
-    .post {
-      margin-bottom: 30px;
+    .hero-side h2 {
+      margin: 0 0 12px;
+      font-size: 1.12rem;
+      font-weight: 700;
     }
 
-    .post a {
-      text-decoration: none;
-      color: #1a1a1a;
-      font-size: 18px;
+    .hero-side p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.9;
     }
 
-    .post a:hover {
-      opacity: 0.6;
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .meta-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px 22px 22px;
+      box-shadow: var(--shadow);
+      min-height: 170px;
+    }
+
+    .meta-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.22rem;
+      font-weight: 700;
+    }
+
+    .meta-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .section {
+      padding: 26px 0 40px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      align-items: start;
+    }
+
+    .column {
+      min-width: 0;
+    }
+
+    .column-title {
+      margin: 0 0 14px;
+      font-size: 1.16rem;
+      font-weight: 700;
+    }
+
+    .post-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .post-card {
+      display: block;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 18px 18px;
+      box-shadow: var(--shadow);
+      transition: transform 0.16s ease, border-color 0.16s ease;
+    }
+
+    .post-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--strong-line);
+    }
+
+    .post-card .type {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.72);
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+
+    .post-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    .post-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .empty-card {
+      background: rgba(255,255,255,0.45);
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      padding: 24px 18px;
+      color: var(--muted);
+      min-height: 120px;
+    }
+
+    .footer {
+      padding: 26px 0 64px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side,
+      .meta-card,
+      .post-card,
+      .empty-card {
+        border-radius: 22px;
+      }
+
+      .hero-desc {
+        font-size: 1.03rem;
+      }
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <strong>Hannah Qin</strong>
+        <span>阅读 · 随笔 · 投资</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#posts">文章</a>
+        <a href="#about">关于</a>
+        <a href="#footer">归档</a>
+      </nav>
+    </div>
+  </header>
 
-    <header>
-      <div>Hannah Qin</div>
-      <div>
-        <a href="#">文章</a>
-        <a href="#">关于</a>
-        <a href="#">归档</a>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>挣扎着做一个有趣的人</h1>
+          <p class="hero-desc">
+            这里收录一个平庸的人的私人随笔，阅读笔记，与投资思考。她尝试通过创作（包括这个个人主页）让自己变得有趣。
+          </p>
+
+          <div class="meta-grid" id="about">
+            <div class="meta-card">
+              <h3>阅读</h3>
+              <p>文学<br>哲学<br>电影<br>商业</p>
+            </div>
+
+            <div class="meta-card">
+              <h3>随笔</h3>
+              <p>情绪<br>关系<br>生活</p>
+            </div>
+
+            <div class="meta-card">
+              <h3>投资</h3>
+              <p>每月新闻<br>投资思路<br>地缘政治</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-side">
+          <h2>关于这个站点</h2>
+          <p>
+            一个缓慢整理自己的地方。书、电影、关系、生活，和一些还没真正想明白的投资问题，都暂时放在这里。
+          </p>
+        </aside>
       </div>
-    </header>
+    </section>
 
-    <h1>挣扎着做一个有趣的人</h1>
+    <section class="section" id="posts">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>文章</h2>
+          <p>按阅读、随笔、投资分类归档。</p>
+        </div>
 
-    <div class="intro">
-      阅读、随笔、生活片段。
+        <div class="columns">
+          <div class="column">
+            <h3 class="column-title">阅读</h3>
+            <div class="post-list">
+              <a class="post-card" href="posts/money-game.html">
+                <span class="type">读书</span>
+                <h3>《金钱博弈》读后感</h3>
+                <p>金融叙事、一级市场、交易谈判与生活想象。</p>
+              </a>
+
+              <a class="post-card" href="posts/notes-from-underground.html">
+                <span class="type">读书</span>
+                <h3>《地下室手记》读后感</h3>
+                <p>理性社会、任性与人生美学之间的拉扯。</p>
+              </a>
+
+              <a class="post-card" href="posts/casablanca.html">
+                <span class="type">电影</span>
+                <h3>Casablanca 观后感</h3>
+                <p>爱情、战争、异乡感，以及经典电影里的告别结构。</p>
+              </a>
+
+              <a class="post-card" href="posts/eva.html">
+                <span class="type">电影</span>
+                <h3>EVA 观后感</h3>
+                <p>观后感与自我投射逐渐缠绕，最终偏离“影评”的边界。</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="column">
+            <h3 class="column-title">随笔</h3>
+            <div class="post-list">
+              <a class="post-card" href="posts/oct-5-fragment.html">
+                <span class="type">随笔</span>
+                <h3>10月5号随笔</h3>
+                <p>深夜里的自我辩难、价值追问与情绪塌陷。</p>
+              </a>
+
+              <a class="post-card" href="posts/mc.html">
+                <span class="type">随笔</span>
+                <h3>随笔 · MC</h3>
+                <p>私人情绪、关系感受与短时段生活经验的切片。</p>
+              </a>
+
+              <a class="post-card" href="posts/emotion-records.html">
+                <span class="type">随笔</span>
+                <h3>一些情绪记录</h3>
+                <p>更直接、更零散，也更接近原始状态的情绪文字。</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="column">
+            <h3 class="column-title">投资</h3>
+            <div class="post-list">
+              <div class="empty-card">
+                暂无内容。<br>
+                以后可以放每月新闻、投资思路与地缘政治观察。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="wrap footer-inner">
+      <span>© Hannah Qin</span>
+      <span>Built with GitHub Pages</span>
     </div>
-
-    <div class="section-title">文章</div>
-
-    <div class="post">
-      <a href="posts/money-game.html">《金钱博弈》读后感</a>
-    </div>
-
-    <div class="post">
-      <a href="posts/notes-from-underground.html">《地下室手记》读后感</a>
-    </div>
-
-    <div class="post">
-      <a href="posts/oct-5-fragment.html">10月5号随笔</a>
-    </div>
-
-    <div class="post">
-      <a href="posts/casablanca.html">Casablanca观后感</a>
-    </div>
-
-    <div class="post">
-      <a href="posts/eva.html">EVA观后感</a>
-    </div>
-
-    <div class="post">
-      <a href="posts/mc.html">随笔-mc</a>
-    </div>
-
-    <div class="post">
-      <a href="posts/emotion-records.html">一些情绪记录</a>
-    </div>
-
-    <div class="post">
-      <a href="posts/sep-22-2022.html">2022年9月22日随笔</a>
-    </div>
-
-  </div>
+  </footer>
 </body>
 </html>
