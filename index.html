@@ -4,660 +4,124 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hannah Qin</title>
-  <meta name="description" content="阅读、随笔与生活片段。" />
+
   <style>
-    :root {
-      --bg: #f7f4ee;
-      --paper: rgba(255,255,255,0.74);
-      --text: #1d1b19;
-      --muted: #6a635c;
-      --line: rgba(29,27,25,0.12);
-      --strong-line: rgba(29,27,25,0.22);
-      --accent: #3d352d;
-      --shadow: 0 20px 60px rgba(29, 27, 25, 0.08);
-      --max: 1040px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.95), transparent 34%),
-        linear-gradient(180deg, #f9f6f1 0%, #f3efe8 100%);
-      font-family: "Iowan Old Style", "Palatino Linotype", "Noto Serif SC", "Songti SC", serif;
-      line-height: 1.75;
-      letter-spacing: 0.01em;
+      font-family: "Songti SC", "Noto Serif SC", serif;
+      background: #f5f2ec;
+      color: #1a1a1a;
+      line-height: 1.8;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .wrap {
-      width: min(calc(100% - 32px), var(--max));
+    .container {
+      max-width: 900px;
       margin: 0 auto;
+      padding: 40px 20px;
     }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(16px);
-      background: rgba(247, 244, 238, 0.72);
-      border-bottom: 1px solid rgba(29,27,25,0.07);
-    }
-
-    .nav {
+    header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      padding: 16px 0;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand strong {
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-
-    .brand span {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
       align-items: center;
-      font-size: 0.95rem;
-      color: var(--muted);
+      margin-bottom: 80px;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .hero {
-      padding: 88px 0 52px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.95fr;
-      gap: 40px;
-      align-items: end;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 7px 12px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 0.82rem;
-      margin-bottom: 18px;
-      background: rgba(255,255,255,0.45);
+    header a {
+      text-decoration: none;
+      color: #666;
+      margin-left: 20px;
+      font-size: 14px;
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(2.8rem, 7vw, 5.2rem);
-      line-height: 1.03;
+      font-size: 64px;
+      line-height: 1.2;
       font-weight: 600;
-      letter-spacing: -0.03em;
+      margin-bottom: 40px;
     }
 
-    .hero p {
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 1.06rem;
-      margin: 22px 0 0;
+    .intro {
+      color: #666;
+      margin-bottom: 60px;
     }
 
-    .hero-note {
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: var(--paper);
-      box-shadow: var(--shadow);
+    .section-title {
+      margin-top: 60px;
+      margin-bottom: 20px;
+      font-size: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
     }
 
-    .hero-note h2 {
-      margin: 0 0 10px;
-      font-size: 1rem;
-      font-weight: 600;
+    .post {
+      margin-bottom: 30px;
     }
 
-    .hero-note p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.97rem;
+    .post a {
+      text-decoration: none;
+      color: #1a1a1a;
+      font-size: 18px;
     }
 
-    .hero-meta {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 28px;
-    }
-
-    .meta-card {
-      border-top: 1px solid var(--strong-line);
-      padding-top: 14px;
-    }
-
-    .meta-card strong {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .meta-card span {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .section {
-      padding: 28px 0 12px;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 22px;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 14px;
-    }
-
-    .section-head h2 {
-      margin: 0;
-      font-size: 1.55rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-      max-width: 480px;
-      text-align: right;
-    }
-
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-
-    .filter-btn {
-      appearance: none;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.45);
-      color: var(--muted);
-      border-radius: 999px;
-      padding: 9px 14px;
-      font: inherit;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-
-    .filter-btn.active,
-    .filter-btn:hover {
-      color: var(--text);
-      border-color: var(--strong-line);
-      background: rgba(255,255,255,0.88);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      grid-column: span 6;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 22px 22px 20px;
-      box-shadow: var(--shadow);
-      transition: transform 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      border-color: var(--strong-line);
-    }
-
-    .card.hide {
-      display: none;
-    }
-
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 28px;
-      padding: 0 10px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      color: var(--muted);
-      background: rgba(255,255,255,0.7);
-      border: 1px solid var(--line);
-    }
-
-    .date {
-      color: var(--muted);
-      font-size: 0.84rem;
-      white-space: nowrap;
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.34rem;
-      line-height: 1.25;
-      font-weight: 600;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-top: 18px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(29,27,25,0.08);
-    }
-
-    .card-footer span {
-      color: var(--muted);
-      font-size: 0.84rem;
-    }
-
-    .read-more {
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 22px;
-    }
-
-    .panel {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .panel h3 {
-      margin: 0 0 12px;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-
-    .panel p,
-    .panel li {
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .panel ul {
-      margin: 0;
-      padding-left: 1.2em;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 16px;
-    }
-
-    .timeline-item {
-      padding-left: 16px;
-      border-left: 1px solid var(--strong-line);
-    }
-
-    .timeline-item strong {
-      display: block;
-      margin-bottom: 4px;
-      font-weight: 600;
-    }
-
-    .footer {
-      padding: 52px 0 72px;
-      color: var(--muted);
-    }
-
-    .footer-inner {
-      border-top: 1px solid var(--line);
-      padding-top: 18px;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 920px) {
-      .hero-grid,
-      .about {
-        grid-template-columns: 1fr;
-      }
-
-      .section-head {
-        flex-direction: column;
-        align-items: start;
-      }
-
-      .section-head p {
-        text-align: left;
-      }
-
-      .card {
-        grid-column: span 12;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav {
-        align-items: start;
-        flex-direction: column;
-      }
-
-      .hero {
-        padding-top: 64px;
-      }
-
-      .hero-meta {
-        grid-template-columns: 1fr;
-      }
-
-      .panel,
-      .card,
-      .hero-note {
-        border-radius: 20px;
-      }
+    .post a:hover {
+      opacity: 0.6;
     }
   </style>
 </head>
+
 <body>
-  <header class="topbar">
-    <div class="wrap nav">
-      <a class="brand" href="#top">
-        <strong>Hannah Qin</strong>
-        <span>阅读 · 随笔 · 生活片段</span>
-      </a>
-      <nav class="nav-links">
-        <a href="#essays">文章</a>
-        <a href="#about">关于</a>
-        <a href="#archive">归档</a>
-      </nav>
+  <div class="container">
+
+    <header>
+      <div>Hannah Qin</div>
+      <div>
+        <a href="#">文章</a>
+        <a href="#">关于</a>
+        <a href="#">归档</a>
+      </div>
+    </header>
+
+    <h1>挣扎着做一个有趣的人</h1>
+
+    <div class="intro">
+      阅读、随笔、生活片段。
     </div>
-  </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="eyebrow">Personal Writing Archive</span>
-          <h1>把读过的书、
-            走过的路，
-            和无法立刻说清的念头，
-            慢慢写下来。</h1>
-          <p>
-            这里收录阅读笔记、旅行片段与私人随笔。写作的重心不在结论，而在观察、犹疑、回望与自我追问。
-          </p>
-          <div class="hero-meta">
-            <div class="meta-card">
-              <strong>阅读</strong>
-              <span>文学、哲学、金融叙事</span>
-            </div>
-            <div class="meta-card">
-              <strong>随笔</strong>
-              <span>情绪、关系、生活现场</span>
-            </div>
-            <div class="meta-card">
-              <strong>片段</strong>
-              <span>登山、旅行与偶然时刻</span>
-            </div>
-          </div>
-        </div>
+    <div class="section-title">文章</div>
 
-        <aside class="hero-note">
-          <h2>站点说明</h2>
-          <p>
-            这个主页采用单页静态结构，适合直接放进 GitHub Pages。你之后只需要继续复制卡片、替换标题、摘要和链接，就能不断扩充文章列表。
-          </p>
-        </aside>
-      </div>
-    </section>
-
-    <section id="essays" class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>文章</h2>
-          <p>先用分类筛选，再逐篇替换为你的真实链接。当前卡片文案已经按你现有文本的主题做了整理。</p>
-        </div>
-
-        <div class="filters">
-          <button class="filter-btn active" data-filter="all">全部</button>
-          <button class="filter-btn" data-filter="reading">读书</button>
-          <button class="filter-btn" data-filter="essay">随笔</button>
-          <button class="filter-btn" data-filter="travel">片段</button>
-        </div>
-
-        <div class="grid" id="cardGrid">
-          <article class="card" data-category="reading">
-            <div class="card-top">
-              <span class="tag">读书</span>
-              <span class="date">读后感</span>
-            </div>
-            <h3>《金钱博弈》读后感</h3>
-            <p>从亚洲金融危机中的收购案写到私募交易背后的谈判、条款与人。表面在谈金融，落点却回到了生活选择与工作的代价。</p>
-            <div class="card-footer">
-              <span>finance · work · life</span>
-              <a class="read-more" href="posts/money-game.html">阅读全文</a>
-            </div>
-          </article>
-
-          <article class="card" data-category="reading">
-            <div class="card-top">
-              <span class="tag">读书</span>
-              <span class="date">读后感</span>
-            </div>
-            <h3>《地下室手记》读后感</h3>
-            <p>从“廉价的幸福”与“崇高的苦难”出发，写到理性社会中的自我撕扯。阅读对象既是陀思妥耶夫斯基，也是自己。</p>
-            <div class="card-footer">
-              <span>literature · philosophy</span>
-              <a class="read-more" href="posts/notes-from-underground.html">阅读全文</a>
-            </div>
-          </article>
-
-          <article class="card" data-category="reading">
-            <div class="card-top">
-              <span class="tag">读书</span>
-              <span class="date">读书笔记</span>
-            </div>
-            <h3>《刀锋》读书笔记</h3>
-            <p>沿着毛姆近似回忆录的写法，去看人生如何不按戏剧逻辑展开。并非每个选择都宏大，却都会把人带向某种命运。</p>
-            <div class="card-footer">
-              <span>Maugham · narrative</span>
-              <a class="read-more" href="posts/the-razors-edge.html">阅读全文</a>
-            </div>
-          </article>
-
-          <article class="card" data-category="essay">
-            <div class="card-top">
-              <span class="tag">随笔</span>
-              <span class="date">10月5日</span>
-            </div>
-            <h3>怎会经历如此突然的情绪崩溃</h3>
-            <p>以近乎自我辩难的方式拆解“价值”“矛盾”与“活着的理由”。形式像命题演算，实质仍是深夜里的自我审判。</p>
-            <div class="card-footer">
-              <span>self-inquiry · fragments</span>
-              <a class="read-more" href="posts/oct-5-fragment.html">阅读全文</a>
-            </div>
-          </article>
-
-          <article class="card" data-category="travel essay">
-            <div class="card-top">
-              <span class="tag">随笔</span>
-              <span class="date">2025.06.09</span>
-            </div>
-            <h3>维也纳，一日关系的回声</h3>
-            <p>写酒店、宫殿、公园、自然史博物馆与机场之间的漫长一天。空间在移动，情绪却一直围绕亲密、选择与后果打转。</p>
-            <div class="card-footer">
-              <span>Vienna · intimacy</span>
-              <a class="read-more" href="posts/vienna-2025-06-09.html">阅读全文</a>
-            </div>
-          </article>
-
-          <article class="card" data-category="travel essay">
-            <div class="card-top">
-              <span class="tag">片段</span>
-              <span class="date">未完</span>
-            </div>
-            <h3>脑袋里乱糟糟的</h3>
-            <p>从深夜出发的登山记。困倦、寒冷、陌生人、山路与迟迟无法落笔的话题，共同构成了写作之前的混沌地带。</p>
-            <div class="card-footer">
-              <span>mountain · night drive</span>
-              <a class="read-more" href="posts/a-mess-in-my-head.html">阅读全文</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>关于这个站点</h2>
-          <p>页面风格故意做得克制，留白较多，让文字成为中心，而不是被装饰压过。</p>
-        </div>
-
-        <div class="about">
-          <div class="panel">
-            <h3>写作取向</h3>
-            <p>
-              你的文本里有很稳定的三条线：其一是读书后的再阐释，其二是关系与情绪的现场记录，其三是旅行、登山、城市漫游这类带有时间与空间感的片段。这个首页就按这三条线来组织。
-            </p>
-            <p>
-              因此我没有把首页做成花哨的“个人展示页”，而是做成更像真正博客首页的结构：有明确分类、清晰文章入口，以及一个尽量安静的阅读氛围。
-            </p>
-          </div>
-
-          <div class="panel">
-            <h3>你之后怎么继续加文章</h3>
-            <ul>
-              <li>首页保留这套结构，只需要不断复制文章卡片。</li>
-              <li>每篇文章单独做一个 HTML 页面，放进 <code>posts/</code> 文件夹。</li>
-              <li>标题短一点，摘要控制在 50 到 90 字最稳。</li>
-              <li>如果想更像正式博客，可以再补一个归档页和单篇文章模板。</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="archive" class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>归档结构建议</h2>
-          <p>你把文字誊上去时，可以按这个目录建文件夹，后续不会乱。</p>
-        </div>
-
-        <div class="about">
-          <div class="panel timeline">
-            <div class="timeline-item">
-              <strong>posts/</strong>
-              <span>放单篇文章页面，例如 <code>money-game.html</code>、<code>vienna-2025-06-09.html</code></span>
-            </div>
-            <div class="timeline-item">
-              <strong>index.html</strong>
-              <span>作为首页，展示文章列表与站点说明</span>
-            </div>
-            <div class="timeline-item">
-              <strong>archive.html</strong>
-              <span>后续可新增，按年份与分类汇总全部文章</span>
-            </div>
-          </div>
-
-          <div class="panel">
-            <h3>可直接替换的个人简介</h3>
-            <p>
-              Hannah Qin，记录阅读、关系、旅行与自我追问。写作对我而言不是输出结论，而是把混乱的感受慢慢整理到可以再次凝视的程度。
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap footer-inner">
-      <span>© Hannah Qin</span>
-      <span>Built for GitHub Pages</span>
+    <div class="post">
+      <a href="posts/money-game.html">《金钱博弈》读后感</a>
     </div>
-  </footer>
 
-  <script>
-    const buttons = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.card');
+    <div class="post">
+      <a href="posts/notes-from-underground.html">《地下室手记》读后感</a>
+    </div>
 
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        const filter = button.dataset.filter;
+    <div class="post">
+      <a href="posts/oct-5-fragment.html">10月5号随笔</a>
+    </div>
 
-        cards.forEach(card => {
-          const categories = card.dataset.category.split(' ');
-          const show = filter === 'all' || categories.includes(filter);
-          card.classList.toggle('hide', !show);
-        });
-      });
-    });
-  </script>
+    <div class="post">
+      <a href="posts/casablanca.html">Casablanca观后感</a>
+    </div>
+
+    <div class="post">
+      <a href="posts/eva.html">EVA观后感</a>
+    </div>
+
+    <div class="post">
+      <a href="posts/mc.html">随笔-mc</a>
+    </div>
+
+    <div class="post">
+      <a href="posts/emotion-records.html">一些情绪记录</a>
+    </div>
+
+    <div class="post">
+      <a href="posts/sep-22-2022.html">2022年9月22日随笔</a>
+    </div>
+
+  </div>
 </body>
 </html>
